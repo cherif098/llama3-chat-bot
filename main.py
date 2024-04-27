@@ -4,7 +4,9 @@ from llm import get_llm
 from prompt import get_chat_prompt_template
 from chain import create_chain
 from dotenv import load_dotenv
+import warnings
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 """ load the env variables """
 load_dotenv()
