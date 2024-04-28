@@ -15,7 +15,7 @@ class StreamableChain:
         streamin_handler = get_streaming_handler(queue)
 
         def task():
-            self(input, callbacks=[streamin_handler])
+            self.invoke(input, config={"callbacks": [streamin_handler]})
 
         Thread(target=task).start()
 
